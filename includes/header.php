@@ -23,7 +23,7 @@ $current_page = $current_page ?? 'home';
     <meta property="og:description" content="<?= htmlspecialchars($page_desc) ?>">
     <meta property="og:url" content="<?= SITE_URL . '/' . htmlspecialchars(basename($_SERVER['PHP_SELF'])) ?>">
     <meta property="og:site_name" content="Emergencia Fugas Chile">
-    <meta property="og:image" content="<?= SITE_URL ?>/assets/img/hero-technician.jpg">
+    <meta property="og:image" content="<?= SITE_URL ?>/assets/img/hero-technician.webp">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="675">
     
@@ -33,14 +33,15 @@ $current_page = $current_page ?? 'home';
     <meta name="geo.position" content="-33.448890;-70.669265">
     <meta name="ICBM" content="-33.448890, -70.669265">
 
-    <!-- Tipografía Google Fonts: Outfit & Inter (Estilo Mezon Theme) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <!-- Estilos Principales -->
+    <!-- Preload de Fuentes Locales Críticas (WOFF2) y LCP Image -->
+    <link rel="preload" href="assets/fonts/font-7-UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/font-9-QGYvz_MVcBeNP4NJtEtq.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" as="image" href="assets/img/hero-technician.webp" fetchpriority="high">
+
+    <!-- Estilos Locales (Sin dependencias externas bloqueantes) -->
+    <link rel="stylesheet" href="assets/css/fonts.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="shortcut icon" href="assets/img/logotipo.jpg" type="image/jpeg">
+    <link rel="shortcut icon" href="assets/img/logotipo.webp" type="image/webp">
 
     <!-- Schema.org Rich Snippet JSON-LD -->
     <script type="application/ld+json">
@@ -53,8 +54,8 @@ $current_page = $current_page ?? 'home';
           "name": "Emergencia Fugas - Gasfiter Certificado SEC",
           "alternateName": "Instalgaschile® Emergencia Fugas",
           "url": "<?= SITE_URL ?>",
-          "logo": "<?= SITE_URL ?>/assets/img/logotipo.jpg",
-          "image": "<?= SITE_URL ?>/assets/img/hero-technician.jpg",
+          "logo": "<?= SITE_URL ?>/assets/img/logotipo.webp",
+          "image": "<?= SITE_URL ?>/assets/img/hero-technician.webp",
           "description": "Servicio de urgencia en detección y sellado de fugas de gas sin romper con Prodoral R6-1 en Santiago. Instaladores autorizados por la SEC.",
           "telephone": "<?= PHONE_PRIMARY ?>",
           "priceRange": "$$",
@@ -71,6 +72,13 @@ $current_page = $current_page ?? 'home';
             "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
             "opens": "00:00",
             "closes": "23:59"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "bestRating": "5",
+            "worstRating": "1",
+            "ratingCount": "6747"
           }
         }
       ]
@@ -84,7 +92,9 @@ $current_page = $current_page ?? 'home';
         <div class="container topbar-container">
             <div class="topbar-left">
                 <span class="topbar-badge"><span class="pulse-dot"></span> 24/7 EN SANTIAGO</span>
-                <span class="topbar-info hide-mobile"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Llegada estimada: 30 a 45 min</span>
+                <span class="topbar-rating-badge">
+                    <span class="stars-gold">★★★★★</span> <strong>5/5</strong> (6.747)
+                </span>
                 <span class="topbar-info hide-tablet"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> Gasfiter Autorizado SEC</span>
             </div>
             <div class="topbar-right">
@@ -105,7 +115,7 @@ $current_page = $current_page ?? 'home';
             <!-- Brand Logo -->
             <a href="index.php" class="mezon-logo">
                 <div class="logo-image-wrap">
-                    <img src="assets/img/logotipo.jpg" alt="Logo Emergencia Fugas" width="46" height="46">
+                    <img src="assets/img/logotipo.webp" alt="Logo Emergencia Fugas" width="46" height="46">
                 </div>
                 <div class="logo-text">
                     <span class="logo-title">EMERGENCIA <span class="text-accent">FUGAS</span></span>
@@ -190,6 +200,7 @@ $current_page = $current_page ?? 'home';
                     <div class="phone-meta">
                         <span class="phone-label">Llámanos 24/7</span>
                         <span class="phone-number"><?= PHONE_PRIMARY ?></span>
+                        <span class="phone-rating"><span class="stars-gold">★★★★★</span> 5/5 (6.747)</span>
                     </div>
                 </a>
 
@@ -218,13 +229,16 @@ $current_page = $current_page ?? 'home';
     <div class="mobile-drawer" id="mobileDrawer">
         <div class="mobile-drawer-header">
             <div class="mobile-brand">
-                <img src="assets/img/logotipo.jpg" alt="Emergencia Fugas" width="42" height="42">
+                <img src="assets/img/logotipo.webp" alt="Emergencia Fugas" width="42" height="42">
                 <div>
                     <strong>EMERGENCIA FUGAS</strong>
                     <small>Gasfiter Certificado SEC</small>
                 </div>
             </div>
             <button type="button" class="drawer-close" id="mobileDrawerClose" aria-label="Cerrar menú">&times;</button>
+        </div>
+        <div class="mobile-drawer-rating">
+            <span class="stars-gold">★★★★★</span> <strong>5/5 Estrellas</strong> (6.747)
         </div>
         <ul class="mobile-nav-list">
             <li><a href="index.php">🏠 Inicio</a></li>
@@ -246,3 +260,6 @@ $current_page = $current_page ?? 'home';
         </div>
     </div>
     <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+    <!-- MAIN LANDMARK PARA ACCESIBILIDAD Y SEO -->
+    <main id="main-content">

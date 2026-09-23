@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__ . '/../config.php';
 ?>
+    </main>
+
     <!-- FOOTER ESTILO MEZON THEME 01 -->
     <footer class="mezon-footer">
         <div class="footer-top-cta">
@@ -29,7 +31,7 @@ require_once __DIR__ . '/../config.php';
                 <!-- Columna 1: Info Empresa y Sello SEC -->
                 <div class="footer-col footer-col-about">
                     <div class="footer-brand">
-                        <img src="assets/img/logotipo.jpg" alt="Emergencia Fugas" width="56" height="56" class="footer-logo">
+                        <img src="assets/img/logotipo.webp" alt="Emergencia Fugas" width="56" height="56" class="footer-logo" loading="lazy">
                         <div>
                             <h4>EMERGENCIA <span class="text-accent">FUGAS</span></h4>
                             <small>Instalgaschile® • Instalador Certificado SEC</small>
@@ -39,11 +41,14 @@ require_once __DIR__ . '/../config.php';
                         Especialistas en detección acústica no destructiva y sellado de fugas de gas con polímero alemán <strong>Prodoral R6-1</strong>. Más de 90.000 servicios ejecutados en hogares, comunidades y empresas de la Región Metropolitana.
                     </p>
                     <div class="sec-official-badge-box">
-                        <img src="assets/img/qr-sec.png" alt="QR Verificación SEC Gasfiter" class="qr-sec-footer" width="75" height="75">
+                        <img src="assets/img/qr-sec.webp" alt="QR Verificación SEC Gasfiter" class="qr-sec-footer" width="75" height="75" loading="lazy">
                         <div class="sec-badge-text">
                             <strong>Instalador Autorizado SEC</strong>
                             <span>Escanea el QR para validar credencial oficial en la Superintendencia de Electricidad y Combustibles.</span>
                         </div>
+                    </div>
+                    <div class="footer-rating-pill">
+                        <span class="stars-gold">★★★★★</span> <strong>5/5</strong> (6.747 reseñas de clientes)
                     </div>
                 </div>
 
@@ -82,6 +87,9 @@ require_once __DIR__ . '/../config.php';
                             <div>
                                 <span>Fono Urgencias 1:</span>
                                 <a href="tel:<?= PHONE_PRIMARY_RAW ?>"><strong><?= PHONE_PRIMARY ?></strong></a>
+                                <div style="font-size: 0.76rem; color: #CBD5E1; display: flex; align-items: center; gap: 4px; margin-top: 2px;">
+                                    <span class="stars-gold">★★★★★</span> <strong>5/5</strong> (6.747)
+                                </div>
                             </div>
                         </li>
                         <li>

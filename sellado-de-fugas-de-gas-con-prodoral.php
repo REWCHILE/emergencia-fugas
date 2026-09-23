@@ -8,7 +8,12 @@ require_once __DIR__ . '/includes/header.php';
 <!-- Header de Página -->
 <section class="inner-page-hero">
     <div class="container">
-        <span class="section-tag" style="background: rgba(245,166,35,0.2); color: var(--primary);">Tecnología Alemana Certificada</span>
+        <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 12px;">
+            <span class="section-tag" style="background: rgba(245,166,35,0.2); color: var(--primary); margin-bottom: 0;">Tecnología Alemana Certificada</span>
+            <div class="page-rating-badge" style="margin-bottom: 0;">
+                <span class="stars-gold">★★★★★</span> <strong>5/5</strong> (6.747)
+            </div>
+        </div>
         <h1 class="inner-page-title">Sellado de Fugas de Gas con Prodoral R6-1</h1>
         <p class="inner-page-desc">
             La solución no invasiva más avanzada del mundo para reparar cañerías de gas natural y GLP sin romper paredes, cerámicas ni losas. Acreditada por instaladores autorizados SEC en Santiago de Chile.
@@ -40,7 +45,7 @@ require_once __DIR__ . '/includes/header.php';
             </div>
 
             <div style="margin-bottom: 40px;">
-                <img src="assets/img/prodoral-system.jpg" alt="Equipo de Inyección y Manometría Prodoral R6-1" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg); width: 100%;">
+                <img src="assets/img/prodoral-system.webp" alt="Equipo de Inyección y Manometría Prodoral R6-1" width="800" height="597" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg); width: 100%; height: auto;">
             </div>
 
             <h3 style="font-size: 1.5rem; margin-bottom: 16px;" id="matrices">Compatible con Diversos Tipos de Redes</h3>
@@ -83,6 +88,9 @@ require_once __DIR__ . '/includes/header.php';
                     <a href="tel:<?= PHONE_PRIMARY_RAW ?>" style="display: block; font-family: var(--font-heading); font-size: 1.35rem; font-weight: 800; color: var(--primary);">
                         <?= PHONE_PRIMARY ?>
                     </a>
+                    <div class="rating-display-phone">
+                        <span class="stars-gold">★★★★★</span> <strong>5/5</strong> (6.747)
+                    </div>
                 </div>
 
                 <a href="https://wa.me/<?= PHONE_PRIMARY_RAW ?>?text=<?= urlencode('Hola, necesito información y presupuesto urgente para sellado de fuga de gas con Prodoral R6-1.') ?>" target="_blank" rel="noopener" class="btn-mezon-whatsapp w-100 mb-3">
@@ -90,7 +98,7 @@ require_once __DIR__ . '/includes/header.php';
                 </a>
 
                 <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center;">
-                    <img src="assets/img/qr-sec.png" alt="QR SEC" width="90" height="90" style="margin: 0 auto 10px; border-radius: 6px; background: white; padding: 4px;">
+                    <img src="assets/img/qr-sec.webp" alt="QR SEC" width="90" height="90" loading="lazy" style="margin: 0 auto 10px; border-radius: 6px; background: white; padding: 4px;">
                     <span style="font-size: 0.78rem; color: #94A3B8; display: block;">Instalador Certificado SEC</span>
                 </div>
             </div>

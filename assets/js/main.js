@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 siteHeader.classList.remove('scrolled');
             }
-        });
+        }, { passive: true });
     }
 
     // 2. MOBILE DRAWER NAVIGATION (TOGGLE COMPLETO)
@@ -160,37 +160,30 @@ document.addEventListener('DOMContentLoaded', () => {
         updateDiagnostic();
     }
 
-    // 4. ACORDEÓN DE PREGUNTAS FRECUENTES (FAQ)
+    // 4. ACORDEÓN DE PREGUNTAS FRECUENTES (FAQ - Cero Reflow con CSS Grid)
     const faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach(item => {
         const questionBtn = item.querySelector('.faq-question');
-        const answer = item.querySelector('.faq-answer');
 
-        if (questionBtn && answer) {
+        if (questionBtn) {
             questionBtn.addEventListener('click', () => {
                 const isActive = item.classList.contains('active');
 
-                // Cerrar los otros elementos (opcional, acordeón clásico)
+                // Cerrar los otros elementos (acordeón clásico)
                 faqItems.forEach(otherItem => {
                     otherItem.classList.remove('active');
-                    const otherAnswer = otherItem.querySelector('.faq-answer');
-                    if (otherAnswer) otherAnswer.style.maxHeight = null;
                 });
 
                 if (!isActive) {
                     item.classList.add('active');
-                    answer.style.maxHeight = answer.scrollHeight + 'px';
                 }
             });
         }
     });
 
-    // Abrir la primera pregunta por defecto
+    // Abrir la primera pregunta por defecto sin reflow
     if (faqItems.length > 0) {
-        const firstItem = faqItems[0];
-        firstItem.classList.add('active');
-        const firstAnswer = firstItem.querySelector('.faq-answer');
-        if (firstAnswer) firstAnswer.style.maxHeight = firstAnswer.scrollHeight + 'px';
+        faqItems[0].classList.add('active');
     }
 
     // 5. ANIMACIÓN NUMÉRICA PARA ESTADÍSTICAS

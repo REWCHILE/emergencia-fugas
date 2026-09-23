@@ -50,7 +50,7 @@ require_once __DIR__ . '/includes/header.php';
         <!-- Right Side: Urgency Action Card -->
         <div class="hero-card-urgency">
             <span class="hero-card-badge">🚨 GUARDIA ACTIVA HOY</span>
-            <h3 class="hero-card-title">Central de Emergencias de Gas</h3>
+            <h2 class="hero-card-title">Central de Emergencias de Gas</h2>
             <p class="hero-card-p">Si te cortaron el gas con <strong>Sello Rojo</strong> o sientes olor a gas, no esperes. Estamos listos para acudir con equipos de sellado.</p>
 
             <div class="urgency-phone-display">
@@ -60,6 +60,9 @@ require_once __DIR__ . '/includes/header.php';
                 <div class="urgency-meta">
                     <span>Llamada Telefónica Inmediata:</span>
                     <a href="tel:<?= PHONE_PRIMARY_RAW ?>"><?= PHONE_PRIMARY ?></a>
+                    <div class="rating-display-phone">
+                        <span class="stars-gold">★★★★★</span> <strong>5/5</strong> (6.747)
+                    </div>
                 </div>
             </div>
 
@@ -71,11 +74,11 @@ require_once __DIR__ . '/includes/header.php';
             <div class="hero-stats-mini">
                 <div class="stat-box">
                     <strong>+<span class="counter-val" data-target="90000">0</span></strong>
-                    <span>Servicios Ejecutados</span>
+                    <span class="stat-label">Servicios Ejecutados</span>
                 </div>
                 <div class="stat-box">
                     <strong><span class="counter-val" data-target="100">0</span>%</strong>
-                    <span>Hermeticidad Garantizada</span>
+                    <span class="stat-label">Hermeticidad Garantizada</span>
                 </div>
             </div>
         </div>
@@ -237,8 +240,8 @@ require_once __DIR__ . '/includes/header.php';
 
                     <!-- Grupo 4: Comuna -->
                     <div class="calc-group">
-                        <label class="calc-label">4. Comuna en Santiago:</label>
-                        <select class="calc-select" id="comunaSelect">
+                        <label class="calc-label" for="comunaSelect" id="comunaSelectLabel">4. Comuna en Santiago:</label>
+                        <select class="calc-select" id="comunaSelect" name="comuna" aria-labelledby="comunaSelectLabel" aria-label="Seleccionar comuna en Santiago">
                             <?php foreach ($cobertura_comunas as $comuna): ?>
                             <option value="<?= $comuna ?>" <?= $comuna === 'Providencia' ? 'selected' : '' ?>><?= $comuna ?></option>
                             <?php endforeach; ?>
@@ -250,7 +253,7 @@ require_once __DIR__ . '/includes/header.php';
                 <div class="calc-result-box">
                     <div>
                         <span class="result-badge">🚨 Diagnóstico Técnico Preliminar</span>
-                        <h4 class="result-title" id="resSolucion">Sellado con Prodoral R6-1</h4>
+                        <h3 class="result-title" id="resSolucion">Sellado con Prodoral R6-1</h3>
                         <ul class="result-details">
                             <li><span>Inmueble:</span> <strong id="resProperty">Casa Particular</strong></li>
                             <li><span>Red de Suministro:</span> <strong id="resGas">Gas Natural (Metrogas)</strong></li>
@@ -310,11 +313,11 @@ require_once __DIR__ . '/includes/header.php';
                     💡 <?= $servicio['beneficio'] ?>
                 </div>
                 <div class="service-card-footer">
-                    <a href="<?= $servicio['url'] ?>" class="service-cta-link">
+                    <a href="<?= $servicio['url'] ?>" class="service-cta-link" aria-label="Conocer más sobre <?= htmlspecialchars($servicio['title']) ?>">
                         Conocer Más
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
                     </a>
-                    <a href="https://wa.me/<?= PHONE_PRIMARY_RAW ?>?text=<?= urlencode('Hola, necesito cotizar el servicio de ' . $servicio['title']) ?>" target="_blank" rel="noopener" class="tag-hot">
+                    <a href="https://wa.me/<?= PHONE_PRIMARY_RAW ?>?text=<?= urlencode('Hola, necesito cotizar el servicio de ' . $servicio['title']) ?>" target="_blank" rel="noopener" class="tag-hot" aria-label="Pedir cotización de <?= htmlspecialchars($servicio['title']) ?> por WhatsApp">
                         Pedir Hoy
                     </a>
                 </div>
@@ -328,7 +331,7 @@ require_once __DIR__ . '/includes/header.php';
 <section class="prodoral-spotlight section-padding" id="prodoral-info">
     <div class="container spotlight-grid">
         <div class="spotlight-media">
-            <img src="assets/img/prodoral-system.jpg" alt="Sistema de Inyección Prodoral R6-1 Fugas de Gas">
+            <img src="assets/img/prodoral-system.webp" alt="Sistema de Inyección Prodoral R6-1 Fugas de Gas" width="575" height="429" loading="lazy">
             <div class="spotlight-badge-overlay">
                 <strong>Alemania DIN EN 13090</strong>
                 <span>Homologado para redes de gas natural y GLP</span>
@@ -388,22 +391,22 @@ require_once __DIR__ . '/includes/header.php';
         <div class="steps-grid">
             <div class="step-card">
                 <div class="step-number">01</div>
-                <h4 class="step-title">Despacho de Urgencia</h4>
+                <h3 class="step-title">Despacho de Urgencia</h3>
                 <p class="step-desc">Coordinación inmediata por WhatsApp o llamada telefónica. Arribo de técnico SEC en menos de 45 minutos.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">02</div>
-                <h4 class="step-title">Detección y Manometría</h4>
+                <h3 class="step-title">Detección y Manometría</h3>
                 <p class="step-desc">Aislamiento de la red y prueba con manómetro digital de precisión para medir la magnitud y ubicación de la fuga.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">03</div>
-                <h4 class="step-title">Inyección Prodoral R6-1</h4>
+                <h3 class="step-title">Inyección Prodoral R6-1</h3>
                 <p class="step-desc">Llenado a presión de la tubería con el polímero alemán, evacuación controlada y secado con soplante de aire.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">04</div>
-                <h4 class="step-title">Certificado y Sello Verde</h4>
+                <h3 class="step-title">Certificado y Sello Verde</h3>
                 <p class="step-desc">Prueba de estanqueidad final normada por la SEC y entrega de informe oficial para reposición del suministro.</p>
             </div>
         </div>
@@ -436,7 +439,7 @@ require_once __DIR__ . '/includes/header.php';
                 </div>
             </div>
             <div style="text-align: center; background: #F8FAFC; padding: 20px; border-radius: var(--radius-md); border: 1px dashed #CBD5E1;">
-                <img src="assets/img/qr-sec.png" alt="QR Verificación SEC" width="130" height="130" style="margin: 0 auto 10px; border-radius: 6px;">
+                <img src="assets/img/qr-sec.webp" alt="QR Verificación SEC" width="130" height="130" loading="lazy" style="margin: 0 auto 10px; border-radius: 6px;">
                 <span style="font-size: 0.78rem; font-weight: 700; color: var(--dark-bg); display: block;">Escanear para Validar en la SEC</span>
             </div>
         </div>

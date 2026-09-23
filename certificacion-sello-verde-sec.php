@@ -8,7 +8,12 @@ require_once __DIR__ . '/includes/header.php';
 <!-- Header de Página -->
 <section class="inner-page-hero">
     <div class="container">
-        <span class="section-tag" style="background: rgba(245,166,35,0.2); color: var(--primary);">Superintendencia de Electricidad y Combustibles</span>
+        <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 12px;">
+            <span class="section-tag" style="background: rgba(245,166,35,0.2); color: var(--primary); margin-bottom: 0;">Superintendencia de Electricidad y Combustibles</span>
+            <div class="page-rating-badge" style="margin-bottom: 0;">
+                <span class="stars-gold">★★★★★</span> <strong>5/5</strong> (6.747)
+            </div>
+        </div>
         <h1 class="inner-page-title">Certificación y Sello Verde SEC de Gas</h1>
         <p class="inner-page-desc">
             Normalizamos redes y artefactos de gas en casas, departamentos y comunidades. Levantamos Sellos Rojos aplicados por Metrogas o entidades de certificación para restituir el suministro legalmente.
@@ -63,7 +68,7 @@ require_once __DIR__ . '/includes/header.php';
             </ol>
 
             <div class="sec-card-box">
-                <img src="assets/img/qr-sec.png" alt="QR Verificación Instalador SEC" width="90" height="90" style="background: white; padding: 6px; border-radius: 8px; flex-shrink: 0;">
+                <img src="assets/img/qr-sec.webp" alt="QR Verificación Instalador SEC" width="90" height="90" loading="lazy" style="background: white; padding: 6px; border-radius: 8px; flex-shrink: 0;">
                 <div>
                     <h4 style="color: var(--dark-bg); margin-bottom: 6px;">Verificación Transparente ante la SEC</h4>
                     <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">
@@ -87,6 +92,9 @@ require_once __DIR__ . '/includes/header.php';
                     <a href="tel:<?= PHONE_PRIMARY_RAW ?>" style="display: block; font-family: var(--font-heading); font-size: 1.35rem; font-weight: 800; color: var(--primary);">
                         <?= PHONE_PRIMARY ?>
                     </a>
+                    <div class="rating-display-phone">
+                        <span class="stars-gold">★★★★★</span> <strong>5/5</strong> (6.747)
+                    </div>
                 </div>
 
                 <a href="https://wa.me/<?= PHONE_PRIMARY_RAW ?>?text=<?= urlencode('Hola, necesito normalizar mi instalación y levantar un Sello Rojo para obtener Sello Verde SEC.') ?>" target="_blank" rel="noopener" class="btn-mezon-whatsapp w-100 mb-3">

@@ -38,9 +38,8 @@ $current_page = $current_page ?? 'home';
     <link rel="preload" href="assets/fonts/font-9-QGYvz_MVcBeNP4NJtEtq.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" as="image" href="assets/img/hero-technician.webp" fetchpriority="high">
 
-    <!-- Estilos Locales (Sin dependencias externas bloqueantes) -->
-    <link rel="stylesheet" href="assets/css/fonts.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Estilos Minificados Locales (Sin dependencias externas bloqueantes) -->
+    <link rel="stylesheet" href="assets/css/style.min.css">
     <link rel="shortcut icon" href="assets/img/logotipo.webp" type="image/webp">
 
     <!-- Schema.org Rich Snippet JSON-LD -->

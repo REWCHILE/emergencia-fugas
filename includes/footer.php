@@ -154,7 +154,7 @@ require_once __DIR__ . '/../config.php';
         </div>
     </a>
 
-    <!-- SCRIPTS JS -->
-    <script src="assets/js/main.js"></script>
+    <!-- SCRIPTS JS (Diferido y Minificado) -->
+    <script src="assets/js/main.min.js" defer></script>
 </body>
 </html>

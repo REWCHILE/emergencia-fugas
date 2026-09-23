@@ -1,0 +1,62 @@
+{
+  "$schema": "https://agenticresourcediscovery.org/spec/v1/schema.json",
+  "name": "Emergencia Fugas Chile",
+  "description": "Servicio de urgencia para detección y sellado de fugas de gas sin romper con Prodoral R6-1 en Santiago de Chile. Gasfiter certificado SEC.",
+  "url": "https://emergencia-fugas.cl",
+  "version": "1.0.0",
+  "contact": {
+    "phone": "+56949877316",
+    "whatsapp": "https://wa.me/56949877316",
+    "email": "contacto@emergencia-fugas.cl"
+  },
+  "resources": [
+    {
+      "name": "Servicio de Sellado Prodoral R6-1",
+      "type": "service",
+      "description": "Sellado polimérico no invasivo desde el interior de la cañería sin picar muros ni cerámicas.",
+      "url": "https://emergencia-fugas.cl/sellado-de-fugas-de-gas-con-prodoral.php"
+    },
+    {
+      "name": "Detección No Invasiva con Gas Trazador",
+      "type": "service",
+      "description": "Detección acústica y con sensor de hidrógeno para localización exacta de fugas subterráneas o empotradas.",
+      "url": "https://emergencia-fugas.cl/deteccion-de-fugas-de-gas.php"
+    },
+    {
+      "name": "Certificación Sello Verde SEC",
+      "type": "service",
+      "description": "Normalización de instalaciones de gas y levantamiento de Sellos Rojos.",
+      "url": "https://emergencia-fugas.cl/certificacion-sello-verde-sec.php"
+    }
+  ],
+  "tools": [
+    {
+      "name": "solicitar_asistencia_urgencia",
+      "description": "Herramienta para solicitar asistencia técnica inmediata por olor a gas, corte de suministro o sospecha de fuga en Santiago.",
+      "endpoint": "https://emergencia-fugas.cl/contacto.php",
+      "method": "POST",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "nombre": {
+            "type": "string",
+            "description": "Nombre y apellido del solicitante"
+          },
+          "telefono": {
+            "type": "string",
+            "description": "Número telefónico de contacto en Chile (ej: +56 9 1234 5678)"
+          },
+          "comuna": {
+            "type": "string",
+            "description": "Comuna del inmueble en la Región Metropolitana"
+          },
+          "mensaje": {
+            "type": "string",
+            "description": "Descripción de la urgencia o problema de gas"
+          }
+        },
+        "required": ["nombre", "telefono", "comuna"]
+      }
+    }
+  ]
+}

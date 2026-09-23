@@ -41,6 +41,7 @@ $current_page = $current_page ?? 'home';
     <!-- Estilos Minificados Locales (Sin dependencias externas bloqueantes) -->
     <link rel="stylesheet" href="assets/css/style.min.css">
     <link rel="shortcut icon" href="assets/img/logotipo.webp" type="image/webp">
+    <link rel="ai-catalog" href="/.well-known/ai-catalog.json" type="application/json">
 
     <!-- Schema.org Rich Snippet JSON-LD -->
     <script type="application/ld+json">

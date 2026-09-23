@@ -1,62 +1,56 @@
 {
-  "$schema": "https://agenticresourcediscovery.org/spec/v1/schema.json",
-  "name": "Emergencia Fugas Chile",
-  "description": "Servicio de urgencia para detección y sellado de fugas de gas sin romper con Prodoral R6-1 en Santiago de Chile. Gasfiter certificado SEC.",
-  "url": "https://emergencia-fugas.cl",
-  "version": "1.0.0",
-  "contact": {
-    "phone": "+56949877316",
-    "whatsapp": "https://wa.me/56949877316",
-    "email": "contacto@emergencia-fugas.cl"
+  "$schema": "https://raw.githubusercontent.com/ards-project/ard-spec/main/spec/schemas/ai-catalog.schema.json",
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Emergencia Fugas Chile",
+    "documentationUrl": "https://emergencia-fugas.cl",
+    "logoUrl": "https://emergencia-fugas.cl/assets/img/logotipo.webp"
   },
-  "resources": [
+  "entries": [
     {
-      "name": "Servicio de Sellado Prodoral R6-1",
-      "type": "service",
-      "description": "Sellado polimérico no invasivo desde el interior de la cañería sin picar muros ni cerámicas.",
-      "url": "https://emergencia-fugas.cl/sellado-de-fugas-de-gas-con-prodoral.php"
+      "identifier": "urn:air:emergencia-fugas:services:prodoral-r6-1",
+      "displayName": "Sellado de Fugas con Prodoral R6-1",
+      "type": "text/html",
+      "url": "https://emergencia-fugas.cl/sellado-de-fugas-de-gas-con-prodoral.php",
+      "description": "Reparación y sellado de fugas de gas sin romper muros ni pisos con polímero alemán Prodoral R6-1.",
+      "tags": ["fugas de gas", "prodoral r6-1", "gasfiter sec", "santiago"],
+      "capabilities": ["GasLeakSealing", "NonInvasiveRepair", "SECCertified"],
+      "representativeQueries": [
+        "sellado de fugas de gas sin romper santiago",
+        "gasfiter certificado sec reparacion fugas con prodoral r6-1"
+      ],
+      "version": "1.0.0",
+      "updatedAt": "2026-09-23T12:00:00Z"
     },
     {
-      "name": "Detección No Invasiva con Gas Trazador",
-      "type": "service",
-      "description": "Detección acústica y con sensor de hidrógeno para localización exacta de fugas subterráneas o empotradas.",
-      "url": "https://emergencia-fugas.cl/deteccion-de-fugas-de-gas.php"
+      "identifier": "urn:air:emergencia-fugas:services:gas-detection",
+      "displayName": "Detección No Invasiva de Fugas con Gas Trazador",
+      "type": "text/html",
+      "url": "https://emergencia-fugas.cl/deteccion-de-fugas-de-gas.php",
+      "description": "Localización milimétrica de fugas de gas mediante gas trazador inerte y geófono acústico.",
+      "tags": ["deteccion de fugas", "gas trazador", "geofono", "gasfiter"],
+      "capabilities": ["TracerGasDetection", "AcousticLeakDetection"],
+      "representativeQueries": [
+        "deteccion de fugas de gas con gas trazador santiago",
+        "geofono para encontrar fuga de gas en departamento"
+      ],
+      "version": "1.0.0",
+      "updatedAt": "2026-09-23T12:00:00Z"
     },
     {
-      "name": "Certificación Sello Verde SEC",
-      "type": "service",
-      "description": "Normalización de instalaciones de gas y levantamiento de Sellos Rojos.",
-      "url": "https://emergencia-fugas.cl/certificacion-sello-verde-sec.php"
-    }
-  ],
-  "tools": [
-    {
-      "name": "solicitar_asistencia_urgencia",
-      "description": "Herramienta para solicitar asistencia técnica inmediata por olor a gas, corte de suministro o sospecha de fuga en Santiago.",
-      "endpoint": "https://emergencia-fugas.cl/contacto.php",
-      "method": "POST",
-      "parameters": {
-        "type": "object",
-        "properties": {
-          "nombre": {
-            "type": "string",
-            "description": "Nombre y apellido del solicitante"
-          },
-          "telefono": {
-            "type": "string",
-            "description": "Número telefónico de contacto en Chile (ej: +56 9 1234 5678)"
-          },
-          "comuna": {
-            "type": "string",
-            "description": "Comuna del inmueble en la Región Metropolitana"
-          },
-          "mensaje": {
-            "type": "string",
-            "description": "Descripción de la urgencia o problema de gas"
-          }
-        },
-        "required": ["nombre", "telefono", "comuna"]
-      }
+      "identifier": "urn:air:emergencia-fugas:services:sec-certification",
+      "displayName": "Certificación Sello Verde SEC y Levantamiento Sello Rojo",
+      "type": "text/html",
+      "url": "https://emergencia-fugas.cl/certificacion-sello-verde-sec.php",
+      "description": "Inspección, pruebas de hermeticidad y normalización para obtención de Sello Verde SEC en Santiago.",
+      "tags": ["sello verde sec", "sello rojo metrogas", "instalador sec clase 1"],
+      "capabilities": ["SECCertification", "ManometricTesting", "DS66Compliance"],
+      "representativeQueries": [
+        "como levantar sello rojo metrogas santiago",
+        "certificacion sello verde sec instalador autorizado"
+      ],
+      "version": "1.0.0",
+      "updatedAt": "2026-09-23T12:00:00Z"
     }
   ]
 }

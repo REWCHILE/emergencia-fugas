@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://emergencia-fugas.cl/sitemap.xml
+Agentmap: https://emergencia-fugas.cl/.well-known/ai-catalog.json

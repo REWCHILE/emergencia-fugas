@@ -15,6 +15,29 @@
     RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+(.+?)\.php[\s?] [NC]
     RewriteRule ^ /%1 [R=301,L]
 
+    # --------------------------------------------------------------------------
+    # REDIRECCIONES 301 DE CONSOLIDACIÓN SEO (URLs indexadas en Google)
+    # --------------------------------------------------------------------------
+    # 1. Marca / Home
+    RewriteRule ^emergencia-fugas/?$ / [R=301,L]
+
+    # 2. Prodoral y Sellado sin Romper
+    RewriteRule ^(prodoral-fuga-de-gas|sellado-de-fuga-de-gas|emergencia-fugas-reparacion-de-fuga-de-gas)/?$ /sellado-de-fugas-de-gas-con-prodoral [R=301,L]
+
+    # 3. Detección (Singular a Plural)
+    RewriteRule ^deteccion-de-fuga-de-gas/?$ /deteccion-de-fugas-de-gas [R=301,L]
+
+    # 4. Acreditación SEC y Sello Verde
+    RewriteRule ^(emergencia-fugas-gasfiter-sec|emergencia-fugas-gasfiter-certificado-sec|fuga-de-gas-atencion-certificado-sec|fuga-de-gas-gasfiter-autorizado-sec|fuga-de-gas-gasfiter-certificado-gas|fuga-de-gas-servicio-de-gasfiter-certificado|fuga-de-gas-servicio-de-gasfiter-autorizado|fuga-de-gas-especialista-en-fugas-certificado-sec|fuga-de-gas-gasfiter-certificado-en-fugas-sec|fuga-de-gas-experto-en-fugas-certificado-sec|emergencia-fugas-gasfiter-certificado-en-fuga-de-gas|fuga-de-gas-servicio-de-gasfiter-certificado-sec)/?$ /certificacion-sello-verde-sec [R=301,L]
+
+    # 5. Servicio Urgente de Fugas de Gas (Consolidación de 32 doorway pages)
+    RewriteRule ^(fuga-urgente|gasfiter-urgente|fuga-de-gas|emergencia-fugas-de-gas|emergencia-fugas-atencion-urgente|fuga-de-gas-atendiendo|emergencia-fuga-de-gas|fuga-de-gas-urgente|fuga-de-gas-gasfiter-urgente|fuga-de-gas-servicio-profesional|fuga-de-gas-gasfiter-urgencia|fuga-de-gas-atencion-inmediata|fuga-de-gas-emergencia-gasfiter|fuga-de-gas-le-atendemos-hoy|fuga-de-gas-tecnico-gasfiter-certificado|emergencia-fugas-gasfiter-fuga-de-gas|fuga-de-gas-gasfiter-automatico-en-gas|emergencia-fugas-tecnico-en-fuga-de-gas|fuga-de-gas-gasfiter-calificado-en-gas|emergencia-fugas-especialista-en-fuga-de-gas|fuga-de-gas-servicio-de-gasfiter-autorizado-urgente|fuga-de-gas-experto-en-fugas-de-gas|fuga-de-gas-servicio-de-gasfiter-certificado-urgente|fuga-de-gas-servicio-de-gasfiter-de-emergencia|fuga-de-gas-tecnico-en-fugas-de-gas|fuga-de-gas-servicio-de-gasfiter-certificado-urgencia|fuga-de-gas-especialista-en-fugas-de-gas|fuga-de-gas-servicio-de-gasfiter-certificado-en-fugas|fuga-de-gas-servicio-de-gasfiter-certificado-en-gas|fuga-de-gas-urgente-servicio-de-gasfiter-certificado-de-emergencia|fuga-de-gas-servicio-profesional-de-emergencia-en-fugas-de-gas|servicio-de-emergencia-por-fuga-de-gas-urgente-somos-gasfiter-certificado-autorizado-sec)/?$ /fuga-de-gas-servicio-urgente [R=301,L]
+
+    # --------------------------------------------------------------------------
+    # REGLA DINÁMICA: LANDINGS LOCALES POR COMUNA / REGIÓN (19 URLs indexadas)
+    # --------------------------------------------------------------------------
+    RewriteRule ^fuga-de-gas-en-([a-zA-Z0-9_-]+)/?$ comuna.php?slug=$1 [NC,L,QSA]
+
     # Si la petición coincide con un directorio físico o archivo existente, servirlo
     RewriteCond %{REQUEST_FILENAME} -d [OR]
     RewriteCond %{REQUEST_FILENAME} -f

@@ -56,13 +56,14 @@ require_once __DIR__ . '/../config.php';
                 <div class="footer-col">
                     <h4 class="footer-heading">Nuestros Servicios</h4>
                     <ul class="footer-menu">
-                        <li><a href="sellado-de-fugas-de-gas-con-prodoral.php">Sellado de Fugas con Prodoral R6-1</a></li>
-                        <li><a href="deteccion-de-fugas-de-gas.php">Detección con Gas Trazador y Geófono</a></li>
-                        <li><a href="certificacion-sello-verde-sec.php">Certificación Sello Verde SEC y TC-6</a></li>
-                        <li><a href="sellado-de-fugas-de-gas-con-prodoral.php#matrices">Reparación de Cañerías de Cobre y HDPE</a></li>
-                        <li><a href="contacto.php">Emergencias Fugas de Gas Natural (GN)</a></li>
-                        <li><a href="contacto.php">Fugas de Gas Licuado (GLP)</a></li>
-                        <li><a href="contacto.php#agua">Detección de Fugas de Agua en Pisos</a></li>
+                        <li><a href="fuga-de-gas-servicio-urgente" style="color: #F5A623; font-weight: 600;">Fuga de Gas: Servicio Urgente 24/7</a></li>
+                        <li><a href="sellado-de-fugas-de-gas-con-prodoral">Sellado de Fugas con Prodoral R6-1</a></li>
+                        <li><a href="deteccion-de-fugas-de-gas">Detección con Gas Trazador y Geófono</a></li>
+                        <li><a href="certificacion-sello-verde-sec">Certificación Sello Verde SEC y TC-6</a></li>
+                        <li><a href="sellado-de-fugas-de-gas-con-prodoral#matrices">Reparación de Cañerías de Cobre y HDPE</a></li>
+                        <li><a href="contacto">Emergencias Fugas de Gas Natural (GN)</a></li>
+                        <li><a href="contacto">Fugas de Gas Licuado (GLP)</a></li>
+                        <li><a href="contacto#agua">Detección de Fugas de Agua en Pisos</a></li>
                     </ul>
                 </div>
 
@@ -124,11 +125,11 @@ require_once __DIR__ . '/../config.php';
                     &copy; <?= date('Y') ?> <strong><?= SITE_NAME ?></strong>. Todos los derechos reservados. Desarrollado conforme a la normativa SEC Decreto Supremo Nº 66.
                 </p>
                 <div class="footer-bottom-links">
-                    <a href="sellado-de-fugas-de-gas-con-prodoral.php">Prodoral R6-1</a>
+                    <a href="sellado-de-fugas-de-gas-con-prodoral">Prodoral R6-1</a>
                     <span>•</span>
-                    <a href="certificacion-sello-verde-sec.php">Sello Verde SEC</a>
+                    <a href="certificacion-sello-verde-sec">Sello Verde SEC</a>
                     <span>•</span>
-                    <a href="contacto.php">Contacto</a>
+                    <a href="contacto">Contacto</a>
                 </div>
             </div>
         </div>

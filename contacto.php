@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <h2 style="font-size: 1.6rem; margin-bottom: 8px;">Envíanos un Mensaje</h2>
                 <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 24px;">Para consultas de presupuesto, normalización o coordinación de visitas programadas:</p>
 
-                <form action="contacto.php" method="POST" style="display: flex; flex-direction: column; gap: 18px;">
+                <form action="contacto" method="POST" style="display: flex; flex-direction: column; gap: 18px;">
                     <div>
                         <label style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 6px;">Nombre Completo:</label>
                         <input type="text" name="nombre" required placeholder="Ej: Marcela Contreras" style="width: 100%; padding: 12px 16px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); font-size: 0.95rem;">

@@ -14,18 +14,31 @@ $current_page = $current_page ?? 'home';
     <title><?= htmlspecialchars($page_title) ?></title>
     <meta name="description" content="<?= htmlspecialchars($page_desc) ?>">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    <link rel="canonical" href="<?= SITE_URL . '/' . htmlspecialchars(basename($_SERVER['PHP_SELF'])) ?>">
+    <?php
+    $slug = basename($_SERVER['PHP_SELF'], '.php');
+    $page_canonical = $canonical_url ?? ($slug === 'index' ? (SITE_URL . '/') : (SITE_URL . '/' . $slug));
+    ?>
+    <link rel="canonical" href="<?= $page_canonical ?>">
     
-    <!-- Open Graph / Redes Sociales -->
+    <!-- Open Graph / Redes Sociales (Facebook Debugger, WhatsApp, etc.) -->
     <meta property="og:locale" content="es_CL">
     <meta property="og:type" content="website">
     <meta property="og:title" content="<?= htmlspecialchars($page_title) ?>">
     <meta property="og:description" content="<?= htmlspecialchars($page_desc) ?>">
-    <meta property="og:url" content="<?= SITE_URL . '/' . htmlspecialchars(basename($_SERVER['PHP_SELF'])) ?>">
+    <meta property="og:url" content="<?= $page_canonical ?>">
     <meta property="og:site_name" content="Emergencia Fugas Chile">
-    <meta property="og:image" content="<?= SITE_URL ?>/assets/img/hero-technician.webp">
+    <meta property="og:image" content="<?= SITE_URL ?>/assets/img/og-emergencia-fugas.jpg">
+    <meta property="og:image:secure_url" content="<?= SITE_URL ?>/assets/img/og-emergencia-fugas.jpg">
+    <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="675">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Emergencia Fugas de Gas 24/7 en Santiago - Gasfiter SEC - Llamar al <?= PHONE_PRIMARY ?>">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<?= htmlspecialchars($page_title) ?>">
+    <meta name="twitter:description" content="<?= htmlspecialchars($page_desc) ?>">
+    <meta name="twitter:image" content="<?= SITE_URL ?>/assets/img/og-emergencia-fugas.jpg">
     
     <!-- Geo Tags para Posicionamiento Local en Santiago de Chile -->
     <meta name="geo.region" content="CL-RM">
@@ -113,7 +126,7 @@ $current_page = $current_page ?? 'home';
     <header class="mezon-header" id="siteHeader">
         <div class="container header-container">
             <!-- Brand Logo -->
-            <a href="index.php" class="mezon-logo">
+            <a href="./" class="mezon-logo">
                 <div class="logo-image-wrap">
                     <img src="assets/img/logotipo.webp" alt="Logo Emergencia Fugas" width="46" height="46">
                 </div>
@@ -127,15 +140,24 @@ $current_page = $current_page ?? 'home';
             <nav class="mezon-nav" id="mainNav">
                 <ul class="nav-list">
                     <li class="nav-item <?= $current_page === 'home' ? 'active' : '' ?>">
-                        <a href="index.php" class="nav-link">Inicio</a>
+                        <a href="./" class="nav-link">Inicio</a>
                     </li>
-                    <li class="nav-item has-dropdown <?= in_array($current_page, ['prodoral', 'deteccion', 'certificacion', 'servicios']) ? 'active' : '' ?>">
-                        <a href="sellado-de-fugas-de-gas-con-prodoral.php" class="nav-link">
+                    <li class="nav-item has-dropdown <?= in_array($current_page, ['prodoral', 'deteccion', 'certificacion', 'servicios', 'servicio-urgente']) ? 'active' : '' ?>">
+                        <a href="sellado-de-fugas-de-gas-con-prodoral" class="nav-link">
                             Servicios <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="sellado-de-fugas-de-gas-con-prodoral.php" class="dropdown-item">
+                                <a href="fuga-de-gas-servicio-urgente" class="dropdown-item">
+                                    <div class="dropdown-item-content">
+                                        <strong>Fuga de Gas Servicio Urgente</strong>
+                                        <span>Llegada en 30 a 45 min ante olor o corte</span>
+                                    </div>
+                                    <span class="tag-hot" style="background:#B91C1C;">Urgente</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="sellado-de-fugas-de-gas-con-prodoral" class="dropdown-item">
                                     <div class="dropdown-item-content">
                                         <strong>Sellado con Prodoral R6-1</strong>
                                         <span>Sin romper paredes ni pisos (Alemania)</span>
@@ -144,7 +166,7 @@ $current_page = $current_page ?? 'home';
                                 </a>
                             </li>
                             <li>
-                                <a href="deteccion-de-fugas-de-gas.php" class="dropdown-item">
+                                <a href="deteccion-de-fugas-de-gas" class="dropdown-item">
                                     <div class="dropdown-item-content">
                                         <strong>Detección con Gas Trazador</strong>
                                         <span>Localización acústica y geófono digital</span>
@@ -152,7 +174,7 @@ $current_page = $current_page ?? 'home';
                                 </a>
                             </li>
                             <li>
-                                <a href="certificacion-sello-verde-sec.php" class="dropdown-item">
+                                <a href="certificacion-sello-verde-sec" class="dropdown-item">
                                     <div class="dropdown-item-content">
                                         <strong>Certificación Sello Verde SEC</strong>
                                         <span>Levantamiento de sellos rojos y TC-6</span>
@@ -160,7 +182,7 @@ $current_page = $current_page ?? 'home';
                                 </a>
                             </li>
                             <li>
-                                <a href="sellado-de-fugas-de-gas-con-prodoral.php#matrices" class="dropdown-item">
+                                <a href="sellado-de-fugas-de-gas-con-prodoral#matrices" class="dropdown-item">
                                     <div class="dropdown-item-content">
                                         <strong>Reparación de Cañerías</strong>
                                         <span>Cobre, Acero, Fierro y Matrices</span>
@@ -170,22 +192,22 @@ $current_page = $current_page ?? 'home';
                         </ul>
                     </li>
                     <li class="nav-item <?= $current_page === 'prodoral' ? 'active' : '' ?>">
-                        <a href="sellado-de-fugas-de-gas-con-prodoral.php" class="nav-link">
+                        <a href="sellado-de-fugas-de-gas-con-prodoral" class="nav-link">
                             Prodoral R6-1
                             <span class="nav-pill-badge">Sin Romper</span>
                         </a>
                     </li>
                     <li class="nav-item <?= $current_page === 'sello-verde' ? 'active' : '' ?>">
-                        <a href="certificacion-sello-verde-sec.php" class="nav-link">Sello Verde SEC</a>
+                        <a href="certificacion-sello-verde-sec" class="nav-link">Sello Verde SEC</a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.php#cotizador" class="nav-link">Cotizador</a>
+                        <a href="./#cotizador" class="nav-link">Cotizador</a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.php#faq" class="nav-link">FAQ</a>
+                        <a href="./#faq" class="nav-link">FAQ</a>
                     </li>
                     <li class="nav-item <?= $current_page === 'contacto' ? 'active' : '' ?>">
-                        <a href="contacto.php" class="nav-link">Contacto</a>
+                        <a href="contacto" class="nav-link">Contacto</a>
                     </li>
                 </ul>
             </nav>
@@ -241,13 +263,14 @@ $current_page = $current_page ?? 'home';
             <span class="stars-gold">★★★★★</span> <strong>5/5 Estrellas</strong> (6.747)
         </div>
         <ul class="mobile-nav-list">
-            <li><a href="index.php">🏠 Inicio</a></li>
-            <li><a href="sellado-de-fugas-de-gas-con-prodoral.php">🔥 Sellado con Prodoral R6-1 (Sin Romper)</a></li>
-            <li><a href="deteccion-de-fugas-de-gas.php">🔍 Detección con Gas Trazador</a></li>
-            <li><a href="certificacion-sello-verde-sec.php">🏅 Certificación y Sello Verde SEC</a></li>
-            <li><a href="index.php#cotizador">⚡ Cotizador Interactivo de Urgencias</a></li>
-            <li><a href="index.php#faq">❓ Preguntas Frecuentes</a></li>
-            <li><a href="contacto.php">📞 Contacto Directo</a></li>
+            <li><a href="./">🏠 Inicio</a></li>
+            <li><a href="fuga-de-gas-servicio-urgente" style="color: #B91C1C; font-weight: 700;">🚨 Fuga de Gas Servicio Urgente 24/7</a></li>
+            <li><a href="sellado-de-fugas-de-gas-con-prodoral">🔥 Sellado con Prodoral R6-1 (Sin Romper)</a></li>
+            <li><a href="deteccion-de-fugas-de-gas">🔍 Detección con Gas Trazador</a></li>
+            <li><a href="certificacion-sello-verde-sec">🏅 Certificación y Sello Verde SEC</a></li>
+            <li><a href="./#cotizador">⚡ Cotizador Interactivo de Urgencias</a></li>
+            <li><a href="./#faq">❓ Preguntas Frecuentes</a></li>
+            <li><a href="contacto">📞 Contacto Directo</a></li>
         </ul>
         <div class="mobile-drawer-actions">
             <a href="tel:<?= PHONE_PRIMARY_RAW ?>" class="btn-mezon-primary w-100">

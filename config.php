@@ -6,7 +6,15 @@
 
 define('SITE_NAME', 'Emergencia Fugas');
 define('SITE_TAGLINE', 'Gasfiter Certificado SEC • Sellado de Fugas sin Romper con Prodoral R6-1');
-define('SITE_URL', 'http://127.0.0.1:8080'); // O https://emergencia-fugas.cl en producción
+$http_host = $_SERVER['HTTP_HOST'] ?? '';
+$is_local = (strpos($http_host, '127.0.0.1') !== false || strpos($http_host, 'localhost') !== false);
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') ? 'https://' : 'http://';
+
+if ($is_local) {
+    define('SITE_URL', $protocol . $http_host);
+} else {
+    define('SITE_URL', 'https://emergencia-fugas.cl');
+}
 define('PHONE_PRIMARY', '+56 9 4987 7316');
 define('PHONE_PRIMARY_RAW', '56949877316');
 define('PHONE_SECONDARY', '+56 9 9748 1755');
@@ -26,10 +34,19 @@ $cobertura_comunas = [
 // Servicios destacados
 $servicios_data = [
     [
+        'id' => 'servicio-urgente',
+        'title' => 'Fuga de Gas: Servicio Urgente 24/7',
+        'badge' => 'Llegada en 30 a 45 Min',
+        'url' => 'fuga-de-gas-servicio-urgente',
+        'icon' => 'flame',
+        'desc' => 'Atención prioritaria inmediata ante fuerte olor a gas, cortes por compañía suministradora (Metrogas, Lipigas, Gasco, Abastible) o Sellos Rojos.',
+        'beneficio' => 'Técnicos de guardia activos 24 horas todos los días.'
+    ],
+    [
         'id' => 'sellado-prodoral',
         'title' => 'Sellado de Fugas con Prodoral R6-1',
         'badge' => 'Tecnología Alemana Sin Romper',
-        'url' => 'sellado-de-fugas-de-gas-con-prodoral.php',
+        'url' => 'sellado-de-fugas-de-gas-con-prodoral',
         'icon' => 'shield-check',
         'desc' => 'Sellado polimérico interno para microfugas en cañerías de cobre, acero y fierro galvanizado. Sin demoler muros, cerámicas ni pisos.',
         'beneficio' => 'Ahorro del 60% vs obra tradicional y listo en horas.'
@@ -38,7 +55,7 @@ $servicios_data = [
         'id' => 'deteccion-fugas',
         'title' => 'Detección con Gas Trazador y Geófono',
         'badge' => 'Diagnóstico No Invasivo',
-        'url' => 'deteccion-de-fugas-de-gas.php',
+        'url' => 'deteccion-de-fugas-de-gas',
         'icon' => 'search',
         'desc' => 'Localización milimétrica del punto exacto de filtración mediante mezcla de hidrógeno/nitrógeno inerte y sensores ultrasónicos.',
         'beneficio' => 'Detección exacta sin perforaciones a ciegas.'
@@ -47,7 +64,7 @@ $servicios_data = [
         'id' => 'certificacion-sec',
         'title' => 'Certificación SEC y Sello Verde',
         'badge' => 'Instaladores Autorizados Clase 1',
-        'url' => 'certificacion-sello-verde-sec.php',
+        'url' => 'certificacion-sello-verde-sec',
         'icon' => 'award',
         'desc' => 'Normalización técnica de instalaciones de gas residenciales, comerciales e industriales. Levantamiento de Sellos Rojos o Amarillos.',
         'beneficio' => 'Trámite oficial TC-6 y manometría certificada SEC.'
@@ -56,25 +73,16 @@ $servicios_data = [
         'id' => 'reparacion-redes',
         'title' => 'Reparación de Cañerías y Matrices',
         'badge' => 'Cobre, HDPE, Acero y Fierro',
-        'url' => 'sellado-de-fugas-de-gas-con-prodoral.php#matrices',
+        'url' => 'sellado-de-fugas-de-gas-con-prodoral#matrices',
         'icon' => 'tool',
         'desc' => 'Reparación integral de redes de gas natural (GN) y gas licuado (GLP), verticales, salas de calderas y medidores en comunidades.',
         'beneficio' => 'Soldadura calificada y pruebas de hermeticidad.'
     ],
     [
-        'id' => 'emergencia-24-7',
-        'title' => 'Urgencias Fugas de Gas 24/7',
-        'badge' => 'Llegada en Menos de 45 Min',
-        'url' => 'contacto.php',
-        'icon' => 'flame',
-        'desc' => 'Atención inmediata ante fuerte olor a gas, cortes por compañía suministradora (Metrogas, Lipigas, Gasco, Abastible) o roturas accidentales.',
-        'beneficio' => 'Técnicos de guardia activos todos los días.'
-    ],
-    [
         'id' => 'gas-agua',
         'title' => 'Detección y Reparación Fugas de Agua',
         'badge' => 'Cámaras Térmicas y Geófono',
-        'url' => 'contacto.php#agua',
+        'url' => 'contacto#agua',
         'icon' => 'droplet',
         'desc' => 'Detección de filtraciones ocultas de agua fría y caliente en losas, pisos radiantes y matrices subterráneas con termografía infrarroja.',
         'beneficio' => 'Ubicación sin roturas innecesarias.'

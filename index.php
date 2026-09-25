@@ -96,7 +96,7 @@ require_once __DIR__ . '/includes/header.php';
                 </div>
                 <h3 class="feature-title">Sellado con Prodoral R6-1</h3>
                 <p class="feature-desc">Tecnología alemana que sella microfugas desde el interior de la cañería sin picar muros ni cerámicas.</p>
-                <a href="sellado-de-fugas-de-gas-con-prodoral.php" class="feature-link">Saber Más &rarr;</a>
+                <a href="sellado-de-fugas-de-gas-con-prodoral" class="feature-link">Saber Más &rarr;</a>
             </div>
 
             <!-- Feature 2 -->
@@ -106,7 +106,7 @@ require_once __DIR__ . '/includes/header.php';
                 </div>
                 <h3 class="feature-title">Detección No Invasiva</h3>
                 <p class="feature-desc">Ubicamos el punto exacto de la filtración con gas trazador inerte y geófono acústico ultrasónico.</p>
-                <a href="deteccion-de-fugas-de-gas.php" class="feature-link">Ver Tecnología &rarr;</a>
+                <a href="deteccion-de-fugas-de-gas" class="feature-link">Ver Tecnología &rarr;</a>
             </div>
 
             <!-- Feature 3 -->
@@ -116,7 +116,7 @@ require_once __DIR__ . '/includes/header.php';
                 </div>
                 <h3 class="feature-title">Sello Verde SEC</h3>
                 <p class="feature-desc">Regularizamos tu instalación ante la SEC y tramitamos el levantamiento de sellos rojos con manometría certificada.</p>
-                <a href="certificacion-sello-verde-sec.php" class="feature-link">Normativa SEC &rarr;</a>
+                <a href="certificacion-sello-verde-sec" class="feature-link">Normativa SEC &rarr;</a>
             </div>
 
             <!-- Feature 4 -->
@@ -126,7 +126,7 @@ require_once __DIR__ . '/includes/header.php';
                 </div>
                 <h3 class="feature-title">Urgencias 24/7 en Santiago</h3>
                 <p class="feature-desc">Unidades móviles de guardia permanente en Las Condes, Providencia, Ñuñoa, Santiago Centro y toda la RM.</p>
-                <a href="contacto.php" class="feature-link">Solicitar Móvil &rarr;</a>
+                <a href="contacto" class="feature-link">Solicitar Móvil &rarr;</a>
             </div>
         </div>
     </div>
@@ -368,7 +368,7 @@ require_once __DIR__ . '/includes/header.php';
             </div>
 
             <div class="d-flex gap-3 flex-wrap">
-                <a href="sellado-de-fugas-de-gas-con-prodoral.php" class="btn-mezon-primary">
+                <a href="sellado-de-fugas-de-gas-con-prodoral" class="btn-mezon-primary">
                     Ver Guía Completa de Prodoral R6-1
                 </a>
                 <a href="tel:<?= PHONE_PRIMARY_RAW ?>" class="btn-mezon-outline">

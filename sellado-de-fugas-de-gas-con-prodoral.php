@@ -45,7 +45,7 @@ require_once __DIR__ . '/includes/header.php';
             </div>
 
             <div style="margin-bottom: 40px;">
-                <img src="assets/img/prodoral-system.webp" alt="Equipo de Inyección y Manometría Prodoral R6-1" width="800" height="597" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg); width: 100%; height: auto;">
+                <img src="/assets/img/prodoral-system.webp" alt="Equipo de Inyección y Manometría Prodoral R6-1" width="800" height="597" loading="lazy" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg); width: 100%; height: auto;">
             </div>
 
             <h3 style="font-size: 1.5rem; margin-bottom: 16px;" id="matrices">Compatible con Diversos Tipos de Redes</h3>
@@ -98,7 +98,7 @@ require_once __DIR__ . '/includes/header.php';
                 </a>
 
                 <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center;">
-                    <img src="assets/img/qr-sec.webp" alt="QR SEC" width="90" height="90" loading="lazy" style="margin: 0 auto 10px; border-radius: 6px; background: white; padding: 4px;">
+                    <img src="/assets/img/qr-sec.webp" alt="QR SEC" width="90" height="90" loading="lazy" style="margin: 0 auto 10px; border-radius: 6px; background: white; padding: 4px;">
                     <span style="font-size: 0.78rem; color: #94A3B8; display: block;">Instalador Certificado SEC</span>
                 </div>
             </div>

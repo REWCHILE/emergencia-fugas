@@ -331,7 +331,7 @@ require_once __DIR__ . '/includes/header.php';
 <section class="prodoral-spotlight section-padding" id="prodoral-info">
     <div class="container spotlight-grid">
         <div class="spotlight-media">
-            <img src="assets/img/prodoral-system.webp" alt="Sistema de Inyección Prodoral R6-1 Fugas de Gas" width="575" height="429" loading="lazy">
+            <img src="/assets/img/prodoral-system.webp" alt="Sistema de Inyección Prodoral R6-1 Fugas de Gas" width="575" height="429" loading="lazy">
             <div class="spotlight-badge-overlay">
                 <strong>Alemania DIN EN 13090</strong>
                 <span>Homologado para redes de gas natural y GLP</span>
@@ -439,7 +439,7 @@ require_once __DIR__ . '/includes/header.php';
                 </div>
             </div>
             <div style="text-align: center; background: #F8FAFC; padding: 20px; border-radius: var(--radius-md); border: 1px dashed #CBD5E1;">
-                <img src="assets/img/qr-sec.webp" alt="QR Verificación SEC" width="130" height="130" loading="lazy" style="margin: 0 auto 10px; border-radius: 6px;">
+                <img src="/assets/img/qr-sec.webp" alt="QR Verificación SEC" width="130" height="130" loading="lazy" style="margin: 0 auto 10px; border-radius: 6px;">
                 <span style="font-size: 0.78rem; font-weight: 700; color: var(--dark-bg); display: block;">Escanear para Validar en la SEC</span>
             </div>
         </div>

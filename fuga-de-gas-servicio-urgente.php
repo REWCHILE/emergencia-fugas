@@ -181,27 +181,42 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <!-- Preguntas Frecuentes de Urgencias -->
             <div style="margin-bottom: 40px;">
                 <h3 style="font-size: 1.5rem; margin-bottom: 20px; color: var(--dark-bg);">Preguntas Frecuentes sobre el Servicio de Urgencia</h3>
-                <div style="display: flex; flex-direction: column; gap: 14px;">
-                    <details style="background: var(--bg-light); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 16px;">
-                        <summary style="font-weight: 700; color: var(--dark-bg); cursor: pointer;">¿Cuánto tardan en llegar a mi domicilio en Santiago?</summary>
-                        <p style="margin-top: 10px; color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
-                            Contamos con unidades móviles equipadas con técnicos de guardia distribuidos en diferentes sectores del Gran Santiago. Nuestro tiempo promedio de arribo oscila entre 30 y 45 minutos tras la confirmación telefónica o vía WhatsApp.
-                        </p>
-                    </details>
+                <div class="faq-list">
+                    <div class="faq-item active">
+                        <button type="button" class="faq-question">
+                            <span>¿Cuánto tardan en llegar a mi domicilio en Santiago?</span>
+                            <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                Contamos con unidades móviles equipadas con técnicos de guardia distribuidos en diferentes sectores del Gran Santiago. Nuestro tiempo promedio de arribo oscila entre 30 y 45 minutos tras la confirmación telefónica o vía WhatsApp.
+                            </div>
+                        </div>
+                    </div>
 
-                    <details style="background: var(--bg-light); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 16px;">
-                        <summary style="font-weight: 700; color: var(--dark-bg); cursor: pointer;">¿Qué debo hacer si la compañía me colocó Sello Rojo en el medidor?</summary>
-                        <p style="margin-top: 10px; color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
-                            El Sello Rojo indica que la instalación no es segura por fuga o incumplimiento normativo. Debe contratar un instalador autorizado SEC para reparar la filtración (idealmente con Prodoral R6-1 para evitar romper), realizar la prueba de hermeticidad y emitir el informe técnico para solicitar la reposición inmediata del suministro.
-                        </p>
-                    </details>
+                    <div class="faq-item">
+                        <button type="button" class="faq-question">
+                            <span>¿Qué debo hacer si la compañía me colocó Sello Rojo en el medidor?</span>
+                            <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                El Sello Rojo indica que la instalación no es segura por fuga o incumplimiento normativo. Debe contratar un instalador autorizado SEC para reparar la filtración (idealmente con Prodoral R6-1 para evitar romper), realizar la prueba de hermeticidad y emitir el informe técnico para solicitar la reposición inmediata del suministro.
+                            </div>
+                        </div>
+                    </div>
 
-                    <details style="background: var(--bg-light); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 16px;">
-                        <summary style="font-weight: 700; color: var(--dark-bg); cursor: pointer;">¿Atienden fines de semana, noches y días festivos?</summary>
-                        <p style="margin-top: 10px; color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
-                            Sí. Una fuga de gas es una emergencia crítica que no puede esperar. Mantenemos guardia activa 24 horas al día, los 7 días de la semana, incluyendo domingos y feriados en todo el Gran Santiago.
-                        </p>
-                    </details>
+                    <div class="faq-item">
+                        <button type="button" class="faq-question">
+                            <span>¿Atienden fines de semana, noches y días festivos?</span>
+                            <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                Sí. Una fuga de gas es una emergencia crítica que no puede esperar. Mantenemos guardia activa 24 horas al día, los 7 días de la semana, incluyendo domingos y feriados en todo el Gran Santiago.
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -281,7 +296,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <!-- Validación SEC y Respaldo -->
                 <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; margin-top: 20px; text-align: center;">
-                    <img src="assets/img/qr-sec.webp" alt="QR Verificación SEC Gasfiter" width="85" height="85" loading="lazy" style="margin: 0 auto 10px; border-radius: 6px; background: white; padding: 4px; display: block;">
+                    <img src="/assets/img/qr-sec.webp" alt="QR Verificación SEC Gasfiter" width="85" height="85" loading="lazy" style="margin: 0 auto 10px; border-radius: 6px; background: white; padding: 4px; display: block;">
                     <strong style="color: white; font-size: 0.85rem; display: block;">Instalador Autorizado SEC Clase 1</strong>
                     <span style="font-size: 0.78rem; color: #94A3B8; display: block; margin-top: 2px;">Licencia oficial vigente • DS Nº 66</span>
                 </div>

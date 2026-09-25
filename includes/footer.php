@@ -31,7 +31,7 @@ require_once __DIR__ . '/../config.php';
                 <!-- Columna 1: Info Empresa y Sello SEC -->
                 <div class="footer-col footer-col-about">
                     <div class="footer-brand">
-                        <img src="assets/img/logotipo.webp" alt="Emergencia Fugas" width="56" height="56" class="footer-logo" loading="lazy">
+                        <img src="/assets/img/logotipo.webp" alt="Emergencia Fugas" width="56" height="56" class="footer-logo" loading="lazy">
                         <div>
                             <h4>EMERGENCIA <span class="text-accent">FUGAS</span></h4>
                             <small>Instalgaschile® • Instalador Certificado SEC</small>
@@ -41,7 +41,7 @@ require_once __DIR__ . '/../config.php';
                         Especialistas en detección acústica no destructiva y sellado de fugas de gas con polímero alemán <strong>Prodoral R6-1</strong>. Más de 90.000 servicios ejecutados en hogares, comunidades y empresas de la Región Metropolitana.
                     </p>
                     <div class="sec-official-badge-box">
-                        <img src="assets/img/qr-sec.webp" alt="QR Verificación SEC Gasfiter" class="qr-sec-footer" width="75" height="75" loading="lazy">
+                        <img src="/assets/img/qr-sec.webp" alt="QR Verificación SEC Gasfiter" class="qr-sec-footer" width="75" height="75" loading="lazy">
                         <div class="sec-badge-text">
                             <strong>Instalador Autorizado SEC</strong>
                             <span>Escanea el QR para validar credencial oficial en la Superintendencia de Electricidad y Combustibles.</span>
@@ -156,6 +156,6 @@ require_once __DIR__ . '/../config.php';
     </a>
 
     <!-- SCRIPTS JS (Diferido y Minificado) -->
-    <script src="assets/js/main.min.js" defer></script>
+    <script src="/assets/js/main.min.js" defer></script>
 </body>
 </html>

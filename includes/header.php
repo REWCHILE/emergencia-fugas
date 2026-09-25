@@ -9,6 +9,7 @@ $current_page = $current_page ?? 'home';
 <!DOCTYPE html>
 <html lang="es-CL">
 <head>
+    <base href="/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title><?= htmlspecialchars($page_title) ?></title>
@@ -47,13 +48,13 @@ $current_page = $current_page ?? 'home';
     <meta name="ICBM" content="-33.448890, -70.669265">
 
     <!-- Preload de Fuentes Locales Críticas (WOFF2) y LCP Image -->
-    <link rel="preload" href="assets/fonts/font-7-UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="assets/fonts/font-9-QGYvz_MVcBeNP4NJtEtq.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" as="image" href="assets/img/hero-technician.webp" fetchpriority="high">
+    <link rel="preload" href="/assets/fonts/font-7-UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/font-9-QGYvz_MVcBeNP4NJtEtq.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" as="image" href="/assets/img/hero-technician.webp" fetchpriority="high">
 
     <!-- Estilos Minificados Locales (Sin dependencias externas bloqueantes) -->
-    <link rel="stylesheet" href="assets/css/style.min.css">
-    <link rel="shortcut icon" href="assets/img/logotipo.webp" type="image/webp">
+    <link rel="stylesheet" href="/assets/css/style.min.css">
+    <link rel="shortcut icon" href="/assets/img/logotipo.webp" type="image/webp">
     <link rel="ai-catalog" href="/.well-known/ai-catalog.json" type="application/json">
 
     <!-- Schema.org Rich Snippet JSON-LD -->
@@ -126,9 +127,9 @@ $current_page = $current_page ?? 'home';
     <header class="mezon-header" id="siteHeader">
         <div class="container header-container">
             <!-- Brand Logo -->
-            <a href="./" class="mezon-logo">
+            <a href="/" class="mezon-logo">
                 <div class="logo-image-wrap">
-                    <img src="assets/img/logotipo.webp" alt="Logo Emergencia Fugas" width="46" height="46">
+                    <img src="/assets/img/logotipo.webp" alt="Logo Emergencia Fugas" width="46" height="46">
                 </div>
                 <div class="logo-text">
                     <span class="logo-title">EMERGENCIA <span class="text-accent">FUGAS</span></span>
@@ -140,7 +141,7 @@ $current_page = $current_page ?? 'home';
             <nav class="mezon-nav" id="mainNav">
                 <ul class="nav-list">
                     <li class="nav-item <?= $current_page === 'home' ? 'active' : '' ?>">
-                        <a href="./" class="nav-link">Inicio</a>
+                        <a href="/" class="nav-link">Inicio</a>
                     </li>
                     <li class="nav-item has-dropdown <?= in_array($current_page, ['prodoral', 'deteccion', 'certificacion', 'servicios', 'servicio-urgente']) ? 'active' : '' ?>">
                         <a href="sellado-de-fugas-de-gas-con-prodoral" class="nav-link">
@@ -251,7 +252,7 @@ $current_page = $current_page ?? 'home';
     <div class="mobile-drawer" id="mobileDrawer">
         <div class="mobile-drawer-header">
             <div class="mobile-brand">
-                <img src="assets/img/logotipo.webp" alt="Emergencia Fugas" width="42" height="42">
+                <img src="/assets/img/logotipo.webp" alt="Emergencia Fugas" width="42" height="42">
                 <div>
                     <strong>EMERGENCIA FUGAS</strong>
                     <small>Gasfiter Certificado SEC</small>
@@ -263,13 +264,13 @@ $current_page = $current_page ?? 'home';
             <span class="stars-gold">★★★★★</span> <strong>5/5 Estrellas</strong> (6.747)
         </div>
         <ul class="mobile-nav-list">
-            <li><a href="./">🏠 Inicio</a></li>
+            <li><a href="/">🏠 Inicio</a></li>
             <li><a href="fuga-de-gas-servicio-urgente" style="color: #B91C1C; font-weight: 700;">🚨 Fuga de Gas Servicio Urgente 24/7</a></li>
             <li><a href="sellado-de-fugas-de-gas-con-prodoral">🔥 Sellado con Prodoral R6-1 (Sin Romper)</a></li>
             <li><a href="deteccion-de-fugas-de-gas">🔍 Detección con Gas Trazador</a></li>
             <li><a href="certificacion-sello-verde-sec">🏅 Certificación y Sello Verde SEC</a></li>
-            <li><a href="./#cotizador">⚡ Cotizador Interactivo de Urgencias</a></li>
-            <li><a href="./#faq">❓ Preguntas Frecuentes</a></li>
+            <li><a href="/#cotizador">⚡ Cotizador Interactivo de Urgencias</a></li>
+            <li><a href="/#faq">❓ Preguntas Frecuentes</a></li>
             <li><a href="contacto">📞 Contacto Directo</a></li>
         </ul>
         <div class="mobile-drawer-actions">

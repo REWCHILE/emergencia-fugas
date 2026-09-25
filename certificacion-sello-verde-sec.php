@@ -68,7 +68,7 @@ require_once __DIR__ . '/includes/header.php';
             </ol>
 
             <div class="sec-card-box">
-                <img src="assets/img/qr-sec.webp" alt="QR Verificación Instalador SEC" width="90" height="90" loading="lazy" style="background: white; padding: 6px; border-radius: 8px; flex-shrink: 0;">
+                <img src="/assets/img/qr-sec.webp" alt="QR Verificación Instalador SEC" width="90" height="90" loading="lazy" style="background: white; padding: 6px; border-radius: 8px; flex-shrink: 0;">
                 <div>
                     <h4 style="color: var(--dark-bg); margin-bottom: 6px;">Verificación Transparente ante la SEC</h4>
                     <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">

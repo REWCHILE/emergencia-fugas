@@ -145,7 +145,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <!-- Foto Móvil de Emergencia en Santiago -->
             <div style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md);">
-                <img src="assets/img/emergency-van.webp" alt="Móvil de Emergencia Gasfiter SEC en Santiago" width="600" height="400" loading="lazy" style="width: 100%; height: auto;">
+                <img src="/assets/img/emergency-van.webp" alt="Móvil de Emergencia Gasfiter SEC en Santiago" width="600" height="400" loading="lazy" style="width: 100%; height: auto;">
                 <div style="background: #F1F5F9; padding: 12px 16px; font-size: 0.82rem; color: var(--text-muted); text-align: center;">
                     Unidad de respuesta rápida con equipos de inyección Prodoral R6-1 en terreno.
                 </div>

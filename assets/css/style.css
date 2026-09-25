@@ -1980,6 +1980,68 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
+   PÍLDORAS DE COBERTURA COMUNAL DE ALTA CONVERSIÓN
+   ========================================================================== */
+.comunas-coverage-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.comuna-coverage-pill {
+    background: #FFFFFF;
+    border: 1px solid var(--border-color);
+    padding: 9px 18px;
+    border-radius: var(--radius-full);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-main);
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.comuna-coverage-pill:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.1);
+    border-color: var(--primary);
+    color: var(--dark-bg);
+}
+
+.comuna-coverage-pill .pin-icon {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    color: #DC2626;
+    transition: transform 0.25s ease;
+}
+
+.comuna-coverage-pill:hover .pin-icon {
+    transform: scale(1.18);
+}
+
+.comuna-coverage-pill.all-santiago-pill {
+    background: linear-gradient(135deg, #F5A623 0%, #E09214 100%);
+    color: #0F172A;
+    border: 1px solid rgba(245, 166, 35, 0.9);
+    font-weight: 800;
+    box-shadow: 0 4px 14px rgba(245, 166, 35, 0.35);
+}
+
+.comuna-coverage-pill.all-santiago-pill:hover {
+    background: linear-gradient(135deg, #E09214 0%, #D97706 100%);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 24px rgba(245, 166, 35, 0.5);
+    color: #0F172A;
+}
+
+/* ==========================================================================
    FOOTER MEZON THEME
    ========================================================================== */
 .mezon-footer {
@@ -1990,7 +2052,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer-top-cta {
     position: relative;
-    margin-top: -50px;
+    margin-top: -45px;
     margin-bottom: 50px;
     z-index: 10;
 }

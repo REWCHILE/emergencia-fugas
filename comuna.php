@@ -468,6 +468,58 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 </script>
 
+<!-- COBERTURA COMUNAL DE SANTIAGO -->
+<section style="background: var(--bg-light); padding: 75px 0 135px; border-top: 1px solid var(--border-color); position: relative;">
+    <div class="container" style="text-align: center;">
+        <span class="section-tag" style="margin-bottom: 14px;">Red de Asistencia en Santiago</span>
+        <h3 style="font-size: clamp(1.6rem, 3.5vw, 2.2rem); margin-bottom: 14px; color: var(--dark-bg); font-weight: 800;">
+            Móviles de Guardia en <?= htmlspecialchars($comuna['nombre']) ?> y Comunas Vecinas
+        </h3>
+        <p style="color: var(--text-muted); max-width: 720px; margin: 0 auto 36px; font-size: 1rem; line-height: 1.65;">
+            Despacho coordinado las 24 horas del día con llegada técnica en <strong>30 a 45 minutos</strong>:
+        </p>
+
+        <div class="comunas-coverage-grid">
+            <?php 
+            $slug_map = [
+                'Las Condes' => 'fuga-de-gas-en-las-condes',
+                'Providencia' => 'fuga-de-gas-en-providencia',
+                'Ñuñoa' => 'fuga-de-gas-en-nunoa',
+                'Santiago Centro' => 'fuga-de-gas-en-santiago',
+                'Vitacura' => 'fuga-de-gas-servicio-urgente',
+                'Lo Barnechea' => 'fuga-de-gas-en-lo-barnechea',
+                'La Reina' => 'fuga-de-gas-en-la-reina',
+                'Peñalolén' => 'fuga-de-gas-en-penalolen',
+                'La Florida' => 'fuga-de-gas-en-la-florida',
+                'Maipú' => 'fuga-de-gas-en-maipu',
+                'San Miguel' => 'fuga-de-gas-en-san-miguel',
+                'Macul' => 'fuga-de-gas-servicio-urgente',
+                'Estación Central' => 'fuga-de-gas-en-estacion-central',
+                'Huechuraba' => 'fuga-de-gas-servicio-urgente',
+                'Recoleta' => 'fuga-de-gas-en-recoleta',
+                'Independencia' => 'fuga-de-gas-en-independencia',
+                'Quilicura' => 'fuga-de-gas-servicio-urgente',
+                'San Joaquín' => 'fuga-de-gas-servicio-urgente',
+                'Pudahuel' => 'fuga-de-gas-servicio-urgente',
+                'Colina / Chicureo' => 'fuga-de-gas-servicio-urgente',
+            ];
+            foreach ($cobertura_comunas as $com_item): 
+                $target_url = $slug_map[$com_item] ?? 'fuga-de-gas-servicio-urgente';
+                $is_current = (strtolower(trim($com_item)) === strtolower(trim($comuna['nombre'])));
+            ?>
+            <a href="<?= $target_url ?>" class="comuna-coverage-pill" style="<?= $is_current ? 'border-color: var(--primary); background: var(--primary-tint); font-weight: 800;' : '' ?>" title="Servicio urgente de fuga de gas en <?= htmlspecialchars($com_item) ?>">
+                <svg class="pin-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3" fill="#DC2626"></circle></svg>
+                <span><?= htmlspecialchars($com_item) ?><?= $is_current ? ' (Sector Actual)' : '' ?></span>
+            </a>
+            <?php endforeach; ?>
+            <a href="tel:<?= PHONE_PRIMARY_RAW ?>" class="comuna-coverage-pill all-santiago-pill" title="Llamar para atención en todo el Gran Santiago">
+                <span class="pulse-dot" style="background: #0F172A; width: 7px; height: 7px;"></span>
+                <span>+ Todo el Gran Santiago 24/7</span>
+            </a>
+        </div>
+    </div>
+</section>
+
 <?php
 require_once __DIR__ . '/includes/footer.php';
 ?>
